@@ -1,7 +1,6 @@
 # folders
 node_modules
 .idea
-typings
 test
 
 # files
