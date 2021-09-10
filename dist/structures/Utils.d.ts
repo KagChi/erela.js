@@ -75,6 +75,7 @@ export interface TrackData {
     info: TrackDataInfo;
 }
 export interface TrackDataInfo {
+    artworkUrl: string;
     title: string;
     identifier: string;
     author: string;

@@ -78,6 +78,7 @@ class TrackUtils {
      * @param requester
      */
     static build(data, requester) {
+        var _a;
         if (typeof data === "undefined")
             throw new RangeError('Argument "data" must be present.');
         try {
@@ -90,9 +91,7 @@ class TrackUtils {
                 isSeekable: data.info.isSeekable,
                 isStream: data.info.isStream,
                 uri: data.info.uri,
-                thumbnail: data.info.uri.includes("youtube")
-                    ? `https://img.youtube.com/vi/${data.info.identifier}/default.jpg`
-                    : null,
+                thumbnail: (_a = data.info.artworkUrl) !== null && _a !== void 0 ? _a : null,
                 displayThumbnail(size = "default") {
                     var _a;
                     const finalSize = (_a = SIZES.find((s) => s === size)) !== null && _a !== void 0 ? _a : "default";

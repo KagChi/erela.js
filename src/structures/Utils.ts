@@ -99,9 +99,7 @@ export abstract class TrackUtils {
         isSeekable: data.info.isSeekable,
         isStream: data.info.isStream,
         uri: data.info.uri,
-        thumbnail: data.info.uri.includes("youtube")
-          ? `https://img.youtube.com/vi/${data.info.identifier}/default.jpg`
-          : null,
+        thumbnail: data.info.artworkUrl ?? null,
         displayThumbnail(size = "default"): string | null {
           const finalSize = SIZES.find((s) => s === size) ?? "default";
           return this.uri.includes("youtube")
@@ -304,6 +302,7 @@ export interface TrackData {
 }
 
 export interface TrackDataInfo {
+  artworkUrl: string;
   title: string;
   identifier: string;
   author: string;
