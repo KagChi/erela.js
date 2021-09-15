@@ -257,6 +257,7 @@ export class Manager extends EventEmitter {
       shards: 1,
       autoPlay: true,
       clientName: "erela.js",
+      resolveSource: "youtube",
       ...options,
     };
 
@@ -498,6 +499,8 @@ export interface ManagerOptions {
   autoPlay?: boolean;
   /** An array of track properties to keep. `track` will always be present. */
   trackPartial?: string[];
+  /** resolveSource from youtube/soundcloud */
+  resolveSource?: "youtube" | "soundcloud",
   /**
    * Function to send data to the websocket.
    * @param id
